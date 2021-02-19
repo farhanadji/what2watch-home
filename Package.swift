@@ -13,7 +13,7 @@ let package = Package(
             targets: ["Home"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.2.0")),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.2.0"),
         .package(path: "../Core")
     ],
     targets: [

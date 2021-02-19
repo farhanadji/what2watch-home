@@ -11,6 +11,7 @@ import Combine
 import Alamofire
 
 public struct HomeRemoteDataSource: DataSource {
+    public init() { }
 
     public typealias Request = Endpoints.Gets
     

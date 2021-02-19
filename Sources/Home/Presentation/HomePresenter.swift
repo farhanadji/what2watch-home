@@ -14,20 +14,20 @@ public class HomePresenter<HomeUseCase: UseCase>: ObservableObject where HomeUse
     
     private let _homeUseCase: HomeUseCase
     
-    @Published var errorMessage: String = ""
-    @Published var popularState: State = .idle
-    @Published var featuredState: State = .idle
-    @Published var nowPlayingState: State = .idle
+    @Published public var errorMessage: String = ""
+    @Published public var popularState: State = .idle
+    @Published public var featuredState: State = .idle
+    @Published public var nowPlayingState: State = .idle
     
-    @Published var popularMovies: [Movie] = []
-    @Published var featuredMovies: [Movie] = []
-    @Published var nowPlayingMovies: [Movie] = []
+    @Published public var popularMovies: [Movie] = []
+    @Published public var featuredMovies: [Movie] = []
+    @Published public var nowPlayingMovies: [Movie] = []
     
     public init(homeUseCase: HomeUseCase) {
         _homeUseCase = homeUseCase
     }
     
-    func getPopularMovies() {
+    public func getPopularMovies() {
         guard popularMovies.count == 0 else {
             popularState = .loaded
             return
@@ -49,7 +49,7 @@ public class HomePresenter<HomeUseCase: UseCase>: ObservableObject where HomeUse
             .store(in: &cancellables)
     }
     
-    func getFeaturedMovies() {
+    public func getFeaturedMovies() {
         guard featuredMovies.count == 0 else {
             featuredState = .loaded
             return
@@ -71,7 +71,7 @@ public class HomePresenter<HomeUseCase: UseCase>: ObservableObject where HomeUse
             .store(in: &cancellables)
     }
     
-    func getNowPlayingMovies() {
+    public func getNowPlayingMovies() {
         guard nowPlayingMovies.count == 0 else {
             nowPlayingState = .loaded
             return

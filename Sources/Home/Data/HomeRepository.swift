@@ -9,8 +9,8 @@ import Combine
 import Core
 
 public struct HomeRepository<RemoteDataSource: DataSource, Transformer: Mapper>: Repository where RemoteDataSource.Request == Endpoints.Gets, RemoteDataSource.Response == [MovieResponse], Transformer.Response == [MovieResponse], Transformer.Domain == [Movie], Transformer.Entity == Any, Transformer.Request == Any {
-    public typealias Request = Endpoints.Gets
     
+    public typealias Request = Endpoints.Gets
     public typealias Response = [Movie]
     
     private let _remoteDataSource: RemoteDataSource

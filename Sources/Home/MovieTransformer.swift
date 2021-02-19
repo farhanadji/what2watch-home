@@ -8,6 +8,7 @@
 import Core
 
 public struct MovieTransformer: Mapper {
+    public init() {} 
     public typealias Response = [MovieResponse]
     
     public typealias Request = Any
